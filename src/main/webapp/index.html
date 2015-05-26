@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<META http-equiv="EXPIRES" content="Mon, 22 Jul 2002 11:12:01 GMT">
+<!--Cache Control for one hour-->
+<title>INEX Innovation</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<style>
+body {
+	padding-top: 50px;
+	padding-bottom: 20px;
+}
+</style>
+<!--<link rel="stylesheet" href="css/bootstrap-theme.min.css">-->
+<link rel="stylesheet" href="css/main.css">
+
+</head>
+<body>
+	<!--[if lt IE 9]>
+            <p class="browsehappy">You are using an <strong>unsupported</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience. We strongly recommend Internet Explorer 9+, latest <a href="https://www.mozilla.org/en-US/firefox/new/">Mozilla Firefox</a> or latest <a href="http://www.google.com/chrome/">Google Chrome</a></p>
+        <![endif]-->
+	<div class="navbar" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target="#divNavbarCollapseTop">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand inex-brand-logo" href="#!/home"
+					onClick="NAMESPACE_INEX.showHome();"></a>
+			</div>
+		</div>
+	</div>
+	<div id="divAdmin" class="container" style="display: none">
+		<div class="row">
+            <div class="col-md-10">
+                <div class="text-right">
+                    <a class="btn"
+                        href="rest/customer/_all/csv"
+                        target="blank">Download as CSV</a>
+                </div>
+            </div>
+            <div class="col-md-10">
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Country</th>
+                            <th>Data Usage Agreement</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbodyCustomers">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+	</div>
+	<!-- Trade-In -->
+	<div id="divFormQuote" class="container">
+		<form id="formQuote" class="form-horizontal"
+			data-bv-feedbackicons-valid="glyphicon glyphicon-ok"
+			data-bv-feedbackicons-invalid="glyphicon glyphicon-remove"
+			data-bv-feedbackicons-validating="glyphicon glyphicon-refresh"
+			novalidate="novalidate">
+
+			<div>
+				<label id="labelFormTitle">Customer Engagement Form</label>
+				<div id="divFormName" style="display: none"></div>
+			</div>
+			<hr />
+			<br />
+			<div>
+				<div class="row">
+					<div class="col-md-10">
+						<p>
+							Please fill out following form in order to obtain more
+							information about iNEX Innovation Inc. and its products in future
+							</br> <strong>* is required field</strong>
+						</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-10">
+						<div id="divFormSubmitStatus" class="alert" role="alert"
+							style="display: none"></div>
+					</div>
+				</div>
+			</div>
+			<br />
+			<div id="divCustomerData">
+				<div>
+					<label>Customer Data </label>
+				</div>
+				<hr />
+				<div>
+					<div id="divCustomerFirstName" class="row form-group">
+						<div class="col-md-2">
+							<label for="inputCustomerFirstName">First Name: *</label>
+						</div>
+						<div class="col-md-8">
+							<input name="inputCustomerFirstName" id="inputCustomerFirstName"
+								type="text" class="input-sm form-control"
+								placeholder="First Name" required
+								aria-describedby="spanCustomerFirstName"
+								onchange="NAMESPACE_INEX.validateInputField('CustomerFirstName', '')"
+								autocomplete="off"> <span id="spanCustomerFirstNameIcon"
+								class="glyphicon form-control-feedback" aria-hidden="true"
+								style="display: none"></span> <span id="spanCustomerFirstName"
+								class="sr-only"></span>
+
+						</div>
+					</div>
+					<br />
+					<div id="divCustomerLastName" class="row form-group">
+						<div class="col-md-2">
+							<label for="inputCustomerLastName">Last Name: *</label>
+						</div>
+						<div class="col-md-8">
+							<input name="inputCustomerLastName" id="inputCustomerLastName"
+								type="text" class="input-sm form-control"
+								placeholder="Last Name" required
+								aria-describedby="spanCustomerLastName"
+								onchange="NAMESPACE_INEX.validateInputField('CustomerLastName', '')"
+								autocomplete="off"> <span id="spanCustomerLastNameIcon"
+								class="glyphicon form-control-feedback" aria-hidden="true"
+								style="display: none"></span> <span id="spanCustomerLastName"
+								class="sr-only"></span>
+
+						</div>
+					</div>
+					<br />
+					<div id="divCustomerEmail" class="row form-group">
+						<div class="col-md-2">
+							<label for="inputCustomerEmail">Email: *</label>
+						</div>
+						<div class="col-md-8">
+							<input name="inputCustomerEmail" id="inputCustomerEmail"
+								type="email" class="input-sm form-control" placeholder="Email"
+								required aria-describedby="spanCustomerEmail"
+								onchange="NAMESPACE_INEX.validateInputField('CustomerEmail', '')"
+								autocomplete="off"> <span id="spanCustomerEmailIcon"
+								class="glyphicon form-control-feedback" aria-hidden="true"
+								style="display: none"></span> <span id="spanCustomerEmail"
+								class="sr-only"></span>
+						</div>
+					</div>
+					<br />
+					<div id="divCustomerPhone" class="row form-group">
+						<div class="col-md-2">
+							<label for="inputCustomerPhone">Phone:</label>
+						</div>
+						<div class="col-md-8">
+							<input name="inputCustomerPhone" id="inputCustomerPhone"
+								type="text" class="input-sm form-control" placeholder="Phone"
+								aria-describedby="spanCustomerPhone" autocomplete="off">
+
+						</div>
+					</div>
+					<br />
+					<div id="divLocation" class="row form-group">
+						<div class="col-md-2">
+							<label>Location:</label>
+						</div>
+					</div>
+					<br />
+					<div id="divCustomerCountry" class="row form-group">
+						<div class="col-md-2">
+							<label for="inputCustomerCountry">Country: *</label>
+						</div>
+						<div class="col-md-8">
+							<input name="inputCustomerCountry" id="inputCustomerCountry"
+								type="text" class="input-sm form-control" placeholder="Country"
+								required aria-describedby="spanCustomerCountry"
+								onchange="NAMESPACE_INEX.validateInputField('CustomerCountry', '')"
+								autocomplete="off"> <span id="spanCustomerCountryIcon"
+								class="glyphicon form-control-feedback" aria-hidden="true"
+								style="display: none"></span> <span id="spanCustomerCountry"
+								class="sr-only"></span>
+
+						</div>
+					</div>
+				</div>
+			</div>
+			<br />
+			<div id="divAddtionalCommentData">
+				<div>
+					<div class="row">
+						<div class="col-md-2">
+							<label for="inputAdditionalComment">Additional Comment:</label>
+						</div>
+						<div class="col-md-8">
+							<textarea name="inputAdditionalComment"
+								id="inputAdditionalComment" class="form-control" rows="5"
+								id="comment"></textarea>
+						</div>
+					</div>
+					<br />
+				</div>
+			</div>
+			<br />
+			<div id="divCustomerNewProductNotificationDataUsageAgreementData">
+				<div id="divCustomerDataUsageAgreement" class="row form-group">
+					<div class="col-md-2">
+						<label for="inputCustomerDataUsageAgreement">Cusomter Data
+							Usage Agreement *</label>
+					</div>
+					<div class="col-md-8">
+						<label class="checkbox-inline"><input
+							name="inputCustomerDataUsageAgreement"
+							id="inputCustomerDataUsageAgreement" type="checkbox"
+							value="Rejected" required
+							aria-describedby="spanCustomerDataUsageAgreement"
+							onchange="NAMESPACE_INEX.updateCheckbox('CustomerDataUsageAgreement'); NAMESPACE_INEX.validateInputField('CustomerDataUsageAgreement', 'Rejected');">
+							By checking the box, I agree with following: <br />
+							<ul>
+								<li>INEX Innovation Inc. will be able to use above
+									information to send to the customer about latest INEX
+									Innovation Products and news</li>
+								<li>This agreement is optional and can be canceled at
+									anytime from either INEX Innovation Inc. or the customer</li>
+								<li>INEX Innovation Inc. will not guarantee any deal with
+									above information and will has the right to refuse customer
+									request</li>
+							</ul> <br /> <span id="spanCustomerDataUsageAgreementIcon"
+							class="glyphicon form-control-feedback" aria-hidden="true"
+							style="display: none"></span> <span
+							id="spanCustomerDataUsageAgreement" class="sr-only"></span></label>
+					</div>
+				</div>
+			</div>
+			<div>
+				<div>
+					<div class="text-right">
+						<button id="buttonClearForm" type="button" class="btn btn-default"
+							value="Clear" onClick="NAMESPACE_INEX.clearForm('formQuote');">Clear
+							Form</button>
+						<button id="buttonSubmitForm" type="button"
+							class="btn btn-primary"
+							data-loading-text="Processing Request, may take 1 - 2 minutes..."
+							value="Submit" onClick="NAMESPACE_INEX.submitQuoteForm();">Submit
+							Form</button>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+	<div class="container">
+		<hr>
+		<footer>
+
+			<p class="text-right">&copy; INEX Innovation, All rights
+				reserved.</p>
+		</footer>
+	</div>
+
+	<!-- /container -->
+	<script>
+		window.jQuery
+				|| document
+						.write('<script src="js/jquery-1.11.0.min.js"><\/script>')
+	</script>
+
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.validate.min.js"></script>
+	<script src="js/additional-methods.min.js"></script>
+
+	<script src="js/main.js"></script>
+</body>
+</html>

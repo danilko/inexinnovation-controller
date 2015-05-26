@@ -1,0 +1,160 @@
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+.nav-product-map
+{
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px;
+    padding-bottom: 10px;
+padding-bottom: 10px;
+margin-bottom: 20px;
+}
+
+.nav-left-pills > .active > a,
+.nav-left-pills > .active > a:hover,
+.nav-left-pills > li > a:hover {
+text-decoration: none;
+
+border-radius:0px;
+border-left-width: 2px;
+border-left-style: solid;
+border-left-color: #428BCA;
+  background-color: transparent !important;
+}
+.nav-left-pills > li > a{
+    border-radius:0px;
+}
+
+.inner-nav-left-pills {
+    padding-left: 30px;
+    
+}
+
+.nav-bottom-pills > .active > a,
+.nav-bottom-pills > li > a {
+text-decoration: none;
+
+border-radius:0px;
+border-bottom-width: 5px;
+border-bottom-style: solid;
+border-bottom-color: white;
+  background-color: transparent !important;
+}
+
+.nav-bottom-pills > .active > a,
+.nav-bottom-pills > .active > a:hover,
+.nav-bottom-pills > li > a:hover {
+text-decoration: none;
+
+border-radius:0px;
+border-bottom-width: 5px;
+border-bottom-style: solid;
+border-bottom-color: #428BCA;
+  background-color: transparent !important;
+}
+.nav-bottom-pills > li > a{
+    border-radius:0px;
+}
+
+.jumbotron {
+   height: 500px;
+   color: white;
+background: transparent;
+
+}
+
+.jumbotron-product-text
+{
+   text-shadow: #444 0px 1px 1px;
+   color: black;
+}
+
+.icon-bar
+{
+background-color: MidnightBlue;
+}
+
+.jumbotron-home-text
+{
+	background: rgba(0, 0, 3, 0.4);
+	background-color: rgba(0, 0, 3, 0.4);
+	position: relative;
+	top: 300px;
+}
+
+.bg-home-wide 
+{
+ background-image: url('../img/dreamstime_m_6821256.jpg');
+   background-size: cover;
+ color: #fff;
+background-color: #333;
+}
+
+
+.bg-product-wide 
+{
+ background-image: url('../img/dreamstime_m_649054.jpg');
+   background-size: cover;
+    color: #fff;
+           background-color: #333;
+}
+
+.inex-brand-logo
+{
+    background-image: url('../img/logo.png');
+    background-size: 144px 67px;
+    width: 144px;
+    height: 67px;
+}
+
+.product-image
+{
+	width: 256px;
+}
+
+.product-image-recommendation-list
+{
+	height: 100px;
+}
+
+.award-modal-image
+{
+	width: 512px;
+}
+
+.bottom
+{
+	padding-bottom: 100 px;
+}
+
+
+@media (min-width: 768px)
+{
+	.sidebar-nav .navbar ul
+    {
+        float: none;
+        display: block;
+    }	
+    .sidebar-nav .navbar li
+    {
+        float: none;
+        display: block;
+    }  
+        .sidebar-nav .navbar li a
+    {
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }    
+}
+
+
+
+
+
+
+
+
+
+
